@@ -94,3 +94,11 @@
     border-color: #10b981; /* Emerald 500 */
     box-shadow: 0 0 0 1px #10b981;
 }
+/* ==========================================
+   COMPONENTE: PARTIDO DETALLE
+   ========================================== */
+
+/* Animación suave para barras de progreso de estadísticas */
+.stat-bar-fill {
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}

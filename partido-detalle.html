@@ -3,142 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codigo-Futbol | Detalle del Partido</title>
-    
-    <!-- Hojas de estilo modularizadas -->
+    <title>Real Zaragoza vs RCD Espanyol | Codigo-Futbol</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
-    
-    <!-- Fuente Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- CABECERA DE NAVEGACIÓN -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Codigo<span>Futbol</span></a>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="navbar bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-black tracking-wider text-white">Codigo<span class="text-emerald-400">Futbol</span></a>
             <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">← Volver a Inicio</a></li>
-                    <li><a href="perfil.html">Mi Perfil</a></li>
+                <ul class="flex space-x-6 text-sm font-medium">
+                    <li><a href="index.html" class="text-slate-400 hover:text-emerald-400 transition-colors">Inicio</a></li>
+                    <li><a href="partido-detalle.html" class="text-emerald-400 font-bold border-b-2 border-emerald-400 pb-1">Partido Detalle</a></li>
+                    <li><a href="perfil.html" class="text-slate-400 hover:text-emerald-400 transition-colors">Mi Perfil</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- CONTENIDO DEL PARTIDO -->
-    <main class="container">
-        <section id="partido-detallado" class="match-detail-section">
-            <h2 class="section-title">📊 Partido en Detalle</h2>
-            
-            <div class="match-card">
-                <!-- Marcador Principal -->
-                <div class="match-header">
-                    <div class="team team-home">
-                        <img src="https://via.placeholder.com/60" alt="Escudo Local" class="team-badge">
-                        <h3>Real Zaragoza</h3>
+    <!-- CONTENIDO PRINCIPAL DE LA DETALLE DEL PARTIDO -->
+    <main class="container mx-auto px-4 my-8 max-w-4xl flex-grow">
+
+        <!-- SCOREBOARD / MARCADOR DEL PARTIDO -->
+        <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl mb-8">
+            <div class="text-center mb-4">
+                <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 border border-emerald-800/50 px-3 py-1 rounded-full">
+                    Jornada 24 • LaLiga Hypermotion
+                </span>
+            </div>
+
+            <div class="flex items-center justify-between text-center py-4">
+                <!-- Equipo Local -->
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-center p-3 shadow-inner mb-3">
+                        <span class="text-2xl sm:text-3xl font-black text-blue-400">RZ</span>
                     </div>
-                    <div class="score-board">
-                        <span class="score">2 - 1</span>
-                        <span class="match-status">FINALIZADO</span>
-                    </div>
-                    <div class="team team-away">
-                        <img src="https://via.placeholder.com/60" alt="Escudo Visitante" class="team-badge">
-                        <h3>RCD Espanyol</h3>
-                    </div>
+                    <h2 class="text-lg sm:text-xl font-bold text-white">Real Zaragoza</h2>
+                    <span class="text-xs text-slate-400">Local</span>
                 </div>
 
-                <!-- Pestañas de Navegación del Partido -->
-                <div class="match-tabs">
-                    <button class="tab-btn active" data-tab="stats">Estadísticas</button>
-                    <button class="tab-btn" data-tab="lineups">Alineaciones</button>
-                    <button class="tab-btn" data-tab="timeline">Minuto a Minuto</button>
+                <!-- Resultado -->
+                <div class="px-4 flex flex-col items-center">
+                    <div class="text-3xl sm:text-5xl font-black text-white tracking-widest bg-slate-950 px-5 py-2 rounded-xl border border-slate-800">
+                        2 - 1
+                    </div>
+                    <span class="text-xs text-slate-400 mt-2 font-medium">Finalizado</span>
                 </div>
 
-                <!-- Contenido 1: Estadísticas -->
-                <div id="tab-stats" class="tab-content active">
-                    <div class="stat-row">
-                        <span class="stat-val">54%</span>
-                        <span class="stat-label">Posesión</span>
-                        <span class="stat-val">46%</span>
+                <!-- Equipo Visitante -->
+                <div class="flex-1 flex flex-col items-center">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-center p-3 shadow-inner mb-3">
+                        <span class="text-2xl sm:text-3xl font-black text-sky-400">ESP</span>
                     </div>
-                    <div class="bar-container">
-                        <div class="bar-fill home" style="width: 54%;"></div>
-                        <div class="bar-fill away" style="width: 46%;"></div>
-                    </div>
-
-                    <div class="stat-row">
-                        <span class="stat-val">12</span>
-                        <span class="stat-label">Tiros Totales</span>
-                        <span class="stat-val">8</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar-fill home" style="width: 60%;"></div>
-                        <div class="bar-fill away" style="width: 40%;"></div>
-                    </div>
-
-                    <div class="stat-row">
-                        <span class="stat-val">5</span>
-                        <span class="stat-label">Tiros a Puerta</span>
-                        <span class="stat-val">3</span>
-                    </div>
-                    <div class="bar-container">
-                        <div class="bar-fill home" style="width: 62.5%;"></div>
-                        <div class="bar-fill away" style="width: 37.5%;"></div>
-                    </div>
+                    <h2 class="text-lg sm:text-xl font-bold text-white">RCD Espanyol</h2>
+                    <span class="text-xs text-slate-400">Visitante</span>
                 </div>
+            </div>
+        </section>
 
-                <!-- Contenido 2: Alineaciones -->
-                <div id="tab-lineups" class="tab-content hidden">
-                    <div class="lineup-grid">
-                        <div class="lineup-column">
-                            <h4>Real Zaragoza (4-4-2)</h4>
-                            <ul>
-                                <li>1. Cristian Álvarez (POR)</li>
-                                <li>4. Jair Amador (DEF)</li>
-                                <li>6. Alejandro Francés (DEF)</li>
-                                <li>14. Francho Serrano (MED)</li>
-                                <li>9. Ivan Azón (DEL)</li>
-                            </ul>
+        <!-- GRID PRINCIPAL: ESTADÍSTICAS Y ALINEACIONES -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- COLUMNA IZQUIERDA: ESTADÍSTICAS Y CRONOLOGÍA (2 Cols) -->
+            <div class="lg:col-span-2 space-y-8">
+
+                <!-- Cronología de Eventos Clave -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        ⏱️ Eventos Clave
+                    </h3>
+
+                    <div class="space-y-3 text-sm">
+                        <!-- Evento 1 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 rounded-lg">18'</span>
+                                <span class="font-semibold text-white">Francho Serrano</span>
+                            </div>
+                            <span class="text-xs text-slate-400">⚽ Gol (Real Zaragoza)</span>
                         </div>
-                        <div class="lineup-column">
-                            <h4>RCD Espanyol (4-3-3)</h4>
-                            <ul>
-                                <li>13. Fernando Pacheco (POR)</li>
-                                <li>5. Fernando Calero (DEF)</li>
-                                <li>10. Sergi Darder (MED)</li>
-                                <li>17. Jofre Carreras (DEL)</li>
-                                <li>7. Javi Puado (DEL)</li>
-                            </ul>
+
+                        <!-- Evento 2 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-1 rounded-lg">41'</span>
+                                <span class="font-semibold text-white">Javi Puado</span>
+                            </div>
+                            <span class="text-xs text-slate-400">🟨 Tarjeta Amarilla (Espanyol)</span>
+                        </div>
+
+                        <!-- Evento 3 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 rounded-lg">54'</span>
+                                <span class="font-semibold text-white">Javi Puado</span>
+                            </div>
+                            <span class="text-xs text-slate-400">⚽ Gol (RCD Espanyol)</span>
+                        </div>
+
+                        <!-- Evento 4 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 rounded-lg">82'</span>
+                                <span class="font-semibold text-white">Ivan Azón</span>
+                            </div>
+                            <span class="text-xs text-slate-400">⚽ Gol (Real Zaragoza)</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contenido 3: Minuto a Minuto -->
-                <div id="tab-timeline" class="tab-content hidden">
-                    <ul class="timeline-list">
-                        <li><span class="time-badge">12'</span> ⚽ <strong>¡Gol de Real Zaragoza!</strong> Remate con la derecha.</li>
-                        <li><span class="time-badge">34'</span> 🟨 Tarjeta amarilla para Sergi Darder (RCD Espanyol).</li>
-                        <li><span class="time-badge">58'</span> ⚽ <strong>¡Gol de RCD Espanyol!</strong> Empate de penalti.</li>
-                        <li><span class="time-badge">87'</span> ⚽ <strong>¡Gol de Real Zaragoza!</strong> Cabezazo tras saque de esquina.</li>
-                    </ul>
+                <!-- Estadísticas del Encuentro -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                    <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                        📊 Estadísticas del Partido
+                    </h3>
+
+                    <div class="space-y-5">
+                        <!-- Barra Posesión -->
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-2">
+                                <span class="text-blue-400">48%</span>
+                                <span class="text-slate-300">Posesión</span>
+                                <span class="text-sky-400">52%</span>
+                            </div>
+                            <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden flex">
+                                <div class="bg-blue-500 h-full" style="width: 48%"></div>
+                                <div class="bg-sky-500 h-full" style="width: 52%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Tiros a Puerta -->
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-2">
+                                <span class="text-white">6</span>
+                                <span class="text-slate-400">Tiros a puerta</span>
+                                <span class="text-white">4</span>
+                            </div>
+                            <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden flex">
+                                <div class="bg-emerald-500 h-full" style="width: 60%"></div>
+                                <div class="bg-slate-700 h-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Faltas -->
+                        <div>
+                            <div class="flex justify-between text-xs font-bold mb-2">
+                                <span class="text-white">12</span>
+                                <span class="text-slate-400">Faltas cometidas</span>
+                                <span class="text-white">15</span>
+                            </div>
+                            <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden flex">
+                                <div class="bg-emerald-500 h-full" style="width: 44%"></div>
+                                <div class="bg-slate-700 h-full" style="width: 56%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-        </section>
+
+            <!-- COLUMNA DERECHA: ALINEACIONES (1 Col) -->
+            <div class="space-y-8">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        📋 Alineaciones
+                    </h3>
+
+                    <!-- Local -->
+                    <div class="mb-6">
+                        <h4 class="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-3">Real Zaragoza (4-4-2)</h4>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80">1. Cristian Álvarez (POR)</li>
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80">15. Francés (DEF)</li>
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80">6. Jair Amador (DEF)</li>
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80">14. Francho Serrano (MED)</li>
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80 font-medium text-emerald-400">9. Ivan Azón (DEL)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Visitante -->
+                    <div>
+                        <h4 class="text-xs font-semibold text-sky-400 uppercase tracking-wider mb-3">RCD Espanyol (4-2-3-1)</h4>
+                        <ul class="space-y-2 text-xs text-slate-300">
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80">13. Pacheco (POR)</li>
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80">5. Calero (DEF)</li>
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80">10. Sergi Darder (MED)</li>
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80 font-medium text-emerald-400">7. Javi Puado (DEL)</li>
+                            <li class="p-2 bg-slate-950/60 rounded-lg border border-slate-800/80">17. Jofre (DEL)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
     <!-- PIE DE PÁGINA -->
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; Codigo-Futbol - La Comunidad Fan de LaLiga Hypermotion</p>
-        </div>
+    <footer class="bg-slate-900 border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Codigo-Futbol. LaLiga Hypermotion Fan Community.</p>
     </footer>
 
-    <!-- Script de interacciones -->
     <script src="js/interacciones.js"></script>
 </body>
 </html>
