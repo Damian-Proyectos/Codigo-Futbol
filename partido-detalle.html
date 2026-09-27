@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codigo-Futbol | Detalle del Partido</title>
+    
+    <!-- Hojas de estilo modularizadas -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- Fuente Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- CABECERA DE NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Codigo<span>Futbol</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">← Volver a Inicio</a></li>
+                    <li><a href="perfil.html">Mi Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO DEL PARTIDO -->
+    <main class="container">
+        <section id="partido-detallado" class="match-detail-section">
+            <h2 class="section-title">📊 Partido en Detalle</h2>
+            
+            <div class="match-card">
+                <!-- Marcador Principal -->
+                <div class="match-header">
+                    <div class="team team-home">
+                        <img src="https://via.placeholder.com/60" alt="Escudo Local" class="team-badge">
+                        <h3>Real Zaragoza</h3>
+                    </div>
+                    <div class="score-board">
+                        <span class="score">2 - 1</span>
+                        <span class="match-status">FINALIZADO</span>
+                    </div>
+                    <div class="team team-away">
+                        <img src="https://via.placeholder.com/60" alt="Escudo Visitante" class="team-badge">
+                        <h3>RCD Espanyol</h3>
+                    </div>
+                </div>
+
+                <!-- Pestañas de Navegación del Partido -->
+                <div class="match-tabs">
+                    <button class="tab-btn active" data-tab="stats">Estadísticas</button>
+                    <button class="tab-btn" data-tab="lineups">Alineaciones</button>
+                    <button class="tab-btn" data-tab="timeline">Minuto a Minuto</button>
+                </div>
+
+                <!-- Contenido 1: Estadísticas -->
+                <div id="tab-stats" class="tab-content active">
+                    <div class="stat-row">
+                        <span class="stat-val">54%</span>
+                        <span class="stat-label">Posesión</span>
+                        <span class="stat-val">46%</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill home" style="width: 54%;"></div>
+                        <div class="bar-fill away" style="width: 46%;"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-val">12</span>
+                        <span class="stat-label">Tiros Totales</span>
+                        <span class="stat-val">8</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill home" style="width: 60%;"></div>
+                        <div class="bar-fill away" style="width: 40%;"></div>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-val">5</span>
+                        <span class="stat-label">Tiros a Puerta</span>
+                        <span class="stat-val">3</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill home" style="width: 62.5%;"></div>
+                        <div class="bar-fill away" style="width: 37.5%;"></div>
+                    </div>
+                </div>
+
+                <!-- Contenido 2: Alineaciones -->
+                <div id="tab-lineups" class="tab-content hidden">
+                    <div class="lineup-grid">
+                        <div class="lineup-column">
+                            <h4>Real Zaragoza (4-4-2)</h4>
+                            <ul>
+                                <li>1. Cristian Álvarez (POR)</li>
+                                <li>4. Jair Amador (DEF)</li>
+                                <li>6. Alejandro Francés (DEF)</li>
+                                <li>14. Francho Serrano (MED)</li>
+                                <li>9. Ivan Azón (DEL)</li>
+                            </ul>
+                        </div>
+                        <div class="lineup-column">
+                            <h4>RCD Espanyol (4-3-3)</h4>
+                            <ul>
+                                <li>13. Fernando Pacheco (POR)</li>
+                                <li>5. Fernando Calero (DEF)</li>
+                                <li>10. Sergi Darder (MED)</li>
+                                <li>17. Jofre Carreras (DEL)</li>
+                                <li>7. Javi Puado (DEL)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido 3: Minuto a Minuto -->
+                <div id="tab-timeline" class="tab-content hidden">
+                    <ul class="timeline-list">
+                        <li><span class="time-badge">12'</span> ⚽ <strong>¡Gol de Real Zaragoza!</strong> Remate con la derecha.</li>
+                        <li><span class="time-badge">34'</span> 🟨 Tarjeta amarilla para Sergi Darder (RCD Espanyol).</li>
+                        <li><span class="time-badge">58'</span> ⚽ <strong>¡Gol de RCD Espanyol!</strong> Empate de penalti.</li>
+                        <li><span class="time-badge">87'</span> ⚽ <strong>¡Gol de Real Zaragoza!</strong> Cabezazo tras saque de esquina.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; Codigo-Futbol - La Comunidad Fan de LaLiga Hypermotion</p>
+        </div>
+    </footer>
+
+    <!-- Script de interacciones -->
+    <script src="js/interacciones.js"></script>
+</body>
+</html>
