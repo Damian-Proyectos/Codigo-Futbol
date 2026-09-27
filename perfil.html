@@ -3,105 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codigo-Futbol | Mi Perfil</title>
-    
-    <!-- Hojas de estilo modularizadas -->
+    <title>Mi Perfil | Codigo-Futbol</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
-    
-    <!-- Fuente Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- CABECERA DE NAVEGACIÓN -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Codigo<span>Futbol</span></a>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="navbar bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-black tracking-wider text-white">Codigo<span class="text-emerald-400">Futbol</span></a>
             <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">← Volver a Inicio</a></li>
-                    <li><a href="partido-detalle.html">Último Partido</a></li>
+                <ul class="flex space-x-6 text-sm font-medium">
+                    <li><a href="index.html" class="text-slate-400 hover:text-emerald-400 transition-colors">Inicio</a></li>
+                    <li><a href="partido-detalle.html" class="text-slate-400 hover:text-emerald-400 transition-colors">Partido Detalle</a></li>
+                    <li><a href="perfil.html" class="text-emerald-400 font-bold border-b-2 border-emerald-400 pb-1">Mi Perfil</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- CONTENIDO DEL PERFIL -->
-    <main class="container">
-        <section class="profile-section">
-            <h2 class="section-title">👤 Panel de Aficionado</h2>
+    <!-- CONTENIDO PRINCIPAL DEL PERFIL -->
+    <main class="container mx-auto px-4 my-8 max-w-4xl flex-grow">
+        
+        <!-- Encabezado / Banner de Usuario -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl mb-8">
+            <!-- Banner decorativo superior -->
+            <div class="h-32 bg-gradient-to-r from-emerald-600 via-teal-700 to-slate-900 relative">
+                <span class="absolute top-4 right-4 bg-slate-950/60 backdrop-blur-md text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-500/20">
+                    Socio VIP
+                </span>
+            </div>
 
-            <!-- Tarjeta Principal del Usuario -->
-            <div class="profile-card">
-                <div class="profile-header">
-                    <div class="profile-avatar">⚽</div>
-                    <div class="profile-info">
-                        <h3>JuanPerez_DAW</h3>
-                        <p class="user-role">Miembro de la Comunidad</p>
-                        <span class="badge-team">Real Zaragoza Fan</span>
+            <!-- Info principal del usuario -->
+            <div class="px-6 pb-6 pt-0 relative flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div class="flex items-end gap-4 -mt-12">
+                    <!-- Avatar -->
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" 
+                             alt="Foto de perfil" 
+                             class="w-24 h-24 rounded-2xl object-cover border-4 border-slate-900 shadow-lg">
+                        <span class="absolute bottom-1 right-1 w-4 h-4 bg-emerald-500 border-2 border-slate-900 rounded-full" title="En línea"></span>
+                    </div>
+                    
+                    <div class="mb-1">
+                        <h1 class="text-2xl font-bold text-white flex items-center gap-2">
+                            Alex González
+                            <svg class="w-5 h-5 text-emerald-400 fill-current" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                        </h1>
+                        <p class="text-sm text-slate-400">@alex_futbol • Fan del <span class="text-emerald-400 font-medium">Real Zaragoza</span></p>
                     </div>
                 </div>
 
-                <!-- Estadísticas del Usuario en la Web -->
-                <div class="profile-stats">
-                    <div class="stat-box">
-                        <span class="stat-number">14</span>
-                        <span class="stat-title">Votos MVP</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">28</span>
-                        <span class="stat-title">Comentarios</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">Nivel 2</span>
-                        <span class="stat-title">Rango Fan</span>
-                    </div>
-                </div>
+                <button class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium px-4 py-2 rounded-xl border border-slate-700 transition-all self-start md:self-auto">
+                    Editar Perfil
+                </button>
+            </div>
+        </div>
 
-                <!-- Formulario de Edición de Perfil -->
-                <form id="profile-form" class="profile-form">
-                    <h4>⚙️ Configuración del Perfil</h4>
+        <!-- Métrica de Estadísticas del Fan -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            <div class="stat-card bg-slate-900/80 border border-slate-800 rounded-2xl p-4 text-center">
+                <span class="block text-2xl font-black text-white">128</span>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Votos MVP</span>
+            </div>
+            <div class="stat-card bg-slate-900/80 border border-slate-800 rounded-2xl p-4 text-center">
+                <span class="block text-2xl font-black text-emerald-400">42</span>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Debates</span>
+            </div>
+            <div class="stat-card bg-slate-900/80 border border-slate-800 rounded-2xl p-4 text-center">
+                <span class="block text-2xl font-black text-white">85%</span>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Acierto Porra</span>
+            </div>
+            <div class="stat-card bg-slate-900/80 border border-slate-800 rounded-2xl p-4 text-center">
+                <span class="block text-2xl font-black text-amber-400">#12</span>
+                <span class="text-xs text-slate-400 font-medium uppercase tracking-wider">Ranking Fan</span>
+            </div>
+        </div>
 
-                    <div class="form-group">
-                        <label for="nickname">Nombre de Usuario / Apodo</label>
-                        <input type="text" id="nickname" value="JuanPerez_DAW" required>
+        <!-- Grid Inferior: Formulario e Insignias -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Formulario de Configuración de Cuenta -->
+            <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                <h2 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                    ⚙️ Configuración de la Cuenta
+                </h2>
+
+                <form class="space-y-4" onsubmit="event.preventDefault();">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Nombre</label>
+                            <input type="text" value="Alex" class="profile-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Apellidos</label>
+                            <input type="text" value="González" class="profile-input">
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" value="juan.perez@ejemplo.com" required>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Correo Electrónico</label>
+                        <input type="email" value="alex.gonzalez@example.com" class="profile-input">
                     </div>
 
-                    <div class="form-group">
-                        <label for="fav-team">Equipo Favorito (LaLiga Hypermotion)</label>
-                        <select id="fav-team">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Equipo Favorito (LaLiga Hypermotion)</label>
+                        <select class="profile-input bg-slate-950">
                             <option value="zaragoza" selected>Real Zaragoza</option>
                             <option value="espanyol">RCD Espanyol</option>
                             <option value="elche">Elche CF</option>
-                            <option value="valladolid">Real Valladolid</option>
+                            <option value="real_oviedo">Real Oviedo</option>
                             <option value="sporting">Sporting de Gijón</option>
-                            <option value="oviedo">Real Oviedo</option>
-                            <option value="otro">Otro club...</option>
                         </select>
                     </div>
 
-                    <button type="submit" class="btn-save">Guardar Cambios</button>
+                    <div class="pt-4 flex justify-end">
+                        <button type="submit" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-2.5 rounded-xl transition-all shadow-lg shadow-emerald-500/10 text-sm">
+                            Guardar Cambios
+                        </button>
+                    </div>
                 </form>
             </div>
-        </section>
+
+            <!-- Panel Lateral: Logros / Insignias -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        🎖️ Insignias Fan
+                    </h2>
+
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                            <span class="text-2xl">🔥</span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Fiel a la Cita</p>
+                                <p class="text-xs text-slate-400">Votó 5 jornadas seguidas</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+                            <span class="text-2xl">🎯</span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Analista Pro</p>
+                                <p class="text-xs text-slate-400">10 predicciones acertadas</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800/80 opacity-50">
+                            <span class="text-2xl">👑</span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Top Comentarista</p>
+                                <p class="text-xs text-slate-400">Consigue 100 reacciones</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-800">
+                    <a href="#" class="text-xs text-emerald-400 hover:underline flex items-center justify-between font-medium">
+                        <span>Ver todas las insignias</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <!-- PIE DE PÁGINA -->
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; Codigo-Futbol - La Comunidad Fan de LaLiga Hypermotion</p>
-        </div>
+    <footer class="bg-slate-900 border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Codigo-Futbol. LaLiga Hypermotion Fan Community.</p>
     </footer>
 
-    <!-- Script de interacciones -->
     <script src="js/interacciones.js"></script>
 </body>
 </html>

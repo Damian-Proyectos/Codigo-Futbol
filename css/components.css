@@ -63,3 +63,34 @@
 .hidden-radio:checked + .card-content .radio-indicator::after {
     transform: scale(1);
 }
+/* ==========================================
+   COMPONENTE: SECCIÓN DE PERFIL DE USUARIO
+   ========================================== */
+
+/* Tarjetas de estadísticas con micro-interacción */
+.stat-card {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: #334155; /* Slate 700 */
+}
+
+/* Inputs estilizados para el formulario de perfil */
+.profile-input {
+    width: 100%;
+    background-color: #020617; /* Slate 950 */
+    color: #f8fafc; /* Slate 50 */
+    border: 1px solid #1e293b; /* Slate 800 */
+    border-radius: 0.75rem;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.profile-input:focus {
+    border-color: #10b981; /* Emerald 500 */
+    box-shadow: 0 0 0 1px #10b981;
+}
