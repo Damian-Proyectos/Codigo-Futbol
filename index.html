@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codigo-Futbol | LaLiga Hypermotion</title>
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fuente de Google Fonts para un toque deportivo y moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. CABECERA Y NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Codigo<span>Futbol</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#mvp">Vota MVP</a></li>
+                    <li><a href="#noticias">Noticias</a></li>
+                    <li><a href="#comunidad">Comunidad</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- 2. SECCIÓN DESTACADA (HERO) -->
+        <section id="hero" class="hero-section">
+            <div class="hero-card">
+                <span class="badge">Última Hora</span>
+                <h2>Arranca la recta final de LaLiga Hypermotion</h2>
+                <p>Análisis, previas y todo lo que necesitas saber sobre el ascenso a Primera División.</p>
+            </div>
+        </section>
+
+        <!-- 3. SECCIÓN VOTACIÓN MVP DE LA JORNADA -->
+        <section id="mvp" class="mvp-section">
+            <h2 class="section-title">🏆 Vota al MVP de la Jornada</h2>
+            <div class="mvp-grid">
+
+                <!-- Candidato 1 -->
+                <div class="mvp-card">
+                    <img src="https://via.placeholder.com/150" alt="Jugador 1" class="mvp-img">
+                    <h3>Jugador 1</h3>
+                    <p class="team">Real Zaragoza</p>
+                    <button class="btn-vote" data-id="1">Votar</button>
+                </div>
+
+                <!-- Candidato 2 -->
+                <div class="mvp-card">
+                    <img src="https://via.placeholder.com/150" alt="Jugador 2" class="mvp-img">
+                    <h3>Jugador 2</h3>
+                    <p class="team">RCD Espanyol</p>
+                    <button class="btn-vote" data-id="2">Votar</button>
+                </div>
+
+                <!-- Candidato 3 -->
+                <div class="mvp-card">
+                    <img src="https://via.placeholder.com/150" alt="Jugador 3" class="mvp-img">
+                    <h3>Jugador 3</h3>
+                    <p class="team">Elche CF</p>
+                    <button class="btn-vote" data-id="3">Votar</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN NOTICIAS -->
+        <section id="noticias" class="news-section">
+            <h2 class="section-title">📰 Últimas Noticias</h2>
+            <div id="news-container" class="news-grid">
+                <!-- Aquí JavaScript cargará las noticias dinámicamente -->
+                <p class="loading-text">Cargando noticias de LaLiga Hypermotion...</p>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN COMUNIDAD / DEBATE -->
+        <section id="comunidad" class="community-section">
+            <h2 class="section-title">💬 Foro de la Afición</h2>
+            
+            <!-- Formulario para publicar comentario -->
+            <form id="comment-form" class="comment-form">
+                <input type="text" id="username-input" placeholder="Tu nombre o apodo" required>
+                <textarea id="comment-input" placeholder="¿Qué opinas del partido de esta jornada?" rows="3" required></textarea>
+                <button type="submit" class="btn-send">Publicar Comentario</button>
+            </form>
+
+            <!-- Lista de comentarios -->
+            <div id="comments-list" class="comments-list">
+                <!-- Comentario de ejemplo para ver el diseño -->
+                <div class="comment-card">
+                    <strong>Futbolero99:</strong>
+                    <p>¡Vaya partidazo el de este domingo! El ascenso va a estar disputado hasta el último minuto.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 6. PIE DE PÁGINA -->
+    <footer>
+        <div class="container">
+            <p>&copy; Codigo-Futbol - La Comunidad Fan de LaLiga Hypermotion.</p>
+            <p><small>Proyecto de desarrollo web (DAW)</small></p>
+        </div>
+    </footer>
+
+    <!-- Archivo JavaScript principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>
