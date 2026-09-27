@@ -1,0 +1,73 @@
+/* ==========================================
+   COMPONENTE UIVERSE: PIXEL RADIO GROUP
+   ========================================== */
+.uiverse-pixel-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  border-radius: 0.5em;
+  font-family: "Courier New", monospace;
+  margin: 15px 0;
+}
+
+.uiverse-pixel-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  position: relative;
+}
+
+.uiverse-pixel-radio input[type="radio"] {
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  background: #ff6b35;
+  border: none;
+  box-shadow:
+    0 0 0 0.15em #000,
+    0 0 0 0.3em #fff,
+    0 0 0 0.45em #000;
+  image-rendering: pixelated;
+  margin: 0;
+  transition: all 0.1s steps(1);
+  position: relative;
+}
+
+.uiverse-pixel-radio input[type="radio"]::before {
+  content: "";
+  display: block;
+  width: 0.75em;
+  height: 0.75em;
+  background: #fff;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.1s ease-out;
+  box-shadow: 0 0 0 1px #000;
+}
+
+.uiverse-pixel-radio input[type="radio"]:checked::before {
+  transform: translate(-50%, -50%) scale(1);
+  background: #000;
+}
+
+.uiverse-pixel-radio input[type="radio"]:hover {
+  background: #ff8c42;
+}
+
+.uiverse-pixel-radio input[type="radio"]:active {
+  background: #e55a2b;
+  transform: translateY(0.125em);
+}
+
+.uiverse-pixel-radio input[type="radio"]:focus-visible {
+  outline: 2px dashed #fff;
+  outline-offset: 0.2em;
+}
